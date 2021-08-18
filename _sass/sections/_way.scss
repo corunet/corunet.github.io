@@ -1,0 +1,42 @@
+.way {
+  background-color: $black;
+
+  .title {
+    color: $green;
+    margin-bottom: 30px;
+  }
+
+  p {
+    color: $white;
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .image {
+    display: flex;
+    justify-content: flex-end;
+
+    .img {
+      width: 100%;
+      max-width: 316px;
+    }
+  }
+
+  @media #{$media-lg} {
+    .row {
+      display: flex;
+      align-items: center;
+    }
+
+    .image {
+      margin-top: 0;
+    }
+  }
+
+  @media #{$media-xs} {
+    .image {
+      justify-content: center;
+      margin-top: 40px;
+    }
+  }
+}

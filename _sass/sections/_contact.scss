@@ -1,0 +1,21 @@
+.contact {
+  background-color: $purple-dark-10;
+
+  .title {
+    font-family: $mono;
+    font-size: 36px;
+    color: $green;
+    font-weight: 500;
+    margin-bottom: 30px;
+  }
+
+  p {
+    font-size: 20px;
+    color: $white;
+
+    a {
+      color: $green;
+      text-decoration: underline;
+    }
+  }
+}

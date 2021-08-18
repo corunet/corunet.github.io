@@ -1,11 +1,18 @@
+@import "sections/about";
+@import "sections/mission";
+@import "sections/work";
+@import "sections/way";
+@import "sections/contact";
+
 html,
 body {
     height: 100%;
     width: 100%;
+    background-color: $white;
 }
 
 body {
-    @include serif-font;
+    font-family: $sans;
 }
 
 hr {
@@ -15,7 +22,7 @@ hr {
 }
 
 hr.light {
-    border-color: white;
+    border-color: $white;
 }
 
 a {
@@ -33,7 +40,8 @@ h3,
 h4,
 h5,
 h6 {
-    @include sans-serif-font;
+    font-weight: 400;
+    font-family: $mono;
 }
 
 p {
@@ -48,11 +56,11 @@ p {
 
 .bg-dark {
     background-color: $theme-dark;
-    color: white;
+    color: $white;
 }
 
 .text-faded {
-    color: rgba(white, .7);
+    color: rgba($white, .7);
 }
 
 section {
@@ -70,36 +78,48 @@ aside {
 // Navigation
 
 .navbar-default {
-    background-color: white;
-    border-color: rgba($theme-dark, .5);
-    @include sans-serif-font;
-    @include transition-all;
+    background-color: $purple-dark-10;
+    font-family: $sans;
+    border: none;
+    // @include transition-all;
     .navbar-header .navbar-brand {
         color: $theme-primary;
-        @include sans-serif-font;
-        font-weight: 700;
+        font-family: $sans;
+        font-weight: 400;
         text-transform: uppercase;
         &:hover,
         &:focus {
-            color: darken($theme-primary, 10%);
+            color: $white;
         }
     }
+
+    .logo {
+        float: left;
+        width: 46px;
+        padding: 12px 0;
+
+        img {
+            width: 100%;
+        }
+    }
+
     .nav {
         > li {
             > a,
             > a:focus {
                 text-transform: uppercase;
-                font-weight: 700;
+                font-weight: 400;
                 font-size: 13px;
-                color: $theme-dark;
+                color: $white;
+                transition: none;
                 &:hover {
-                    color: $theme-primary;
+                    color: $white;
                 }
             }
             &.active {
                 > a,
                 > a:focus {
-                    color: $theme-primary !important;
+                    color: $white !important;
                     background-color: transparent;
                     &:hover {
                         background-color: transparent;
@@ -110,41 +130,62 @@ aside {
     }
     @media (min-width: 768px) {
         background-color: transparent;
-        border-color: rgba(white, .3);
         .navbar-header .navbar-brand {
-            color: rgba(white, .7);
+            color: $white;
             &:hover,
             &:focus {
-                color: white;
+                color: $white;
+                font-style: italic;
+                font-weight: 500;
             }
         }
         .nav > li > a,
         .nav > li > a:focus {
-            color: rgba(white, .7);
+            color: $white;
             &:hover {
-                color: white;
+                font-style: italic;
+                font-weight: 500;
             }
         }
         &.affix {
-            background-color: white;
-            border-color: rgba($theme-dark, .5);
+            background-color: $purple-dark-10;
             .navbar-header .navbar-brand {
-                color: $theme-primary;
+                color: $white;
                 font-size: 14px;
                 &:hover,
                 &:focus {
-                    color: darken($theme-primary, 10%);
+                    color: $white;
                 }
             }
             .nav > li > a,
             .nav > li > a:focus {
-                color: $theme-dark;
+                color: $white;
                 &:hover {
-                    color: $theme-primary;
+                    color: $white;
                 }
             }
         }
     }
+
+    .navbar-collapse {
+        border-color: $white;
+    }
+
+    // Hamburger menu
+
+    .navbar-toggle {
+        border: none;
+
+        .icon-bar {
+            background-color: $white;
+        }
+
+        &:hover,
+        &:focus {
+            background: transparent;
+        }
+    }
+
 }
 
 // Homepage Header
@@ -153,11 +194,9 @@ header {
     position: relative;
     width: 100%;
     min-height: auto;
-    @include background-cover;
-    background-position: center;
-    background-image: url('../img/header.jpg');
     text-align: center;
-    color: white;
+    background-color: $purple-dark-10;
+    color: $white;
     .header-content {
         position: relative;
         text-align: center;
@@ -165,17 +204,17 @@ header {
         width: 100%;
         .header-content-inner {
             h1 {
-                font-weight: 700;
-                text-transform: uppercase;
+                font-weight: 400;
                 margin-top: 0;
-                margin-bottom: 0;
+                margin-bottom: 120px;
+                color: $green;
             }
             hr {
                 margin: 30px auto;
             }
             p {
                 font-weight: 300;
-                color: rgba(white, .7);
+                color: rgba($white, .7);
                 font-size: 16px;
                 margin-bottom: 50px;
             }
@@ -228,7 +267,7 @@ header {
     max-width: 650px;
     margin: 0 auto;
     .portfolio-box-caption {
-        color: white;
+        color: $white;
         opacity: 0;
         display: block;
         background: rgba( $theme-primary, .9 );
@@ -296,19 +335,27 @@ header {
 
 // Button Styles
 .btn-default {
-    @include button-variant($theme-dark, white, white);
+    @include button-variant($theme-dark, $white, $white);
 }
 
 .btn-primary {
-    @include button-variant(white, $theme-primary, $theme-primary);
+    @include button-variant($white, $theme-primary, $theme-primary);
 }
 
 .btn {
-    @include sans-serif-font;
-    border: none;
-    border-radius: 300px;
-    font-weight: 700;
+    font-family: $mono;
+    border: 2px solid $white;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 30px;
     text-transform: uppercase;
+    color: $white;
+
+    &:hover,
+    &:focus {
+        color: $purple-dark-10;
+        background-color: $white;
+    }
 }
 
 .btn-xl {
@@ -324,24 +371,24 @@ header {
 // Extras
 // -- Highlight Color Customization
 ::-moz-selection {
-    color: white;
+    color: $white;
     text-shadow: none;
     background: $theme-dark;
 }
 
 ::selection {
-    color: white;
+    color: $white;
     text-shadow: none;
     background: $theme-dark;
 }
 
 img::selection {
-    color: white;
+    color: $white;
     background: transparent;
 }
 
 img::-moz-selection {
-    color: white;
+    color: $white;
     background: transparent;
 }
 

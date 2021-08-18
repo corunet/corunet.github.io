@@ -1,0 +1,29 @@
+.mission {
+  background-color: $purple-dark-10;
+  padding: 0;
+
+  .title {
+    font-size: 36px;
+    color: $green;
+    font-weight: 500;
+  }
+
+  p {
+    color: $white;
+    font-size: 20px;
+    line-height: 2;
+  }
+
+  .image {
+    .img {
+      width: 100%;
+    }
+  }
+
+  @media #{$media-md} {
+    .row {
+      display: flex;
+      align-items: center;
+    }
+  }
+}
