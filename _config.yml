@@ -1,11 +1,10 @@
 # Site settings
-title: Corunet
-email:
-description: > # this means to ignore newlines until "baseurl:"
+title: "Corunet | High-quality software and consultancy services"
+description: "A software consulting company with an open-source mindset, at Corunet we are experts in all kinds of data-related problems and PCI-compliant systems. We work with startups and Fortune 500s companies, delivering high-quality software."
+email: "info@corunet.com"
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "" # the base hostname & protocol for your site
+url: "https://corunet.github.io/" # the base hostname & protocol for your site
 
-twitter_username: corunet
 github_username: corunet
 
 # Build settings
@@ -15,3 +14,13 @@ gems:
   - jekyll-inline-svg
 svg:
   optimize: true
+
+plugins:
+- jekyll-seo-tag
+
+twitter:
+  username: corunet
+  card: summary
+
+author: "Corunet"
+logo: "/img/corunet-logo.png"
