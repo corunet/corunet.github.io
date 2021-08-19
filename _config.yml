@@ -20,7 +20,7 @@ plugins:
 
 twitter:
   username: corunet
-  card: summary
+  card: summary_large_image
 
 author: "Corunet"
 logo: "/img/corunet-logo.png"
